@@ -3567,7 +3567,7 @@ function setAudioIn($input_source) {
 
  	// No need to configure Local during startup (wrkready = 0)
 	if ($input_source == 'Local' && $result[0]['value'] == '1') {
-		if ($_SESSION['i2sdevice'] == 'HiFiBerry DAC+ ADC') {
+		if ($_SESSION['i2sdevice'] == 'HiFiBerry DAC+ ADC' || $_SESSION['i2sdevice'] == 'HiFiBerry DAC+ ADC Pro') {
 			sysCmd('killall -s 9 alsaloop');
 		}
 		elseif ($_SESSION['i2sdevice'] == 'Audiophonics ES9028/9038 DAC' || $_SESSION['i2sdevice'] == 'Audiophonics ES9028/9038 DAC (Pre 2019)') {
@@ -3595,7 +3595,7 @@ function setAudioIn($input_source) {
 			sysCmd('/var/www/vol.sh ' . $_SESSION['volknob_preamp']);
 		}
 
-		if ($_SESSION['i2sdevice'] == 'HiFiBerry DAC+ ADC') {
+		if ($_SESSION['i2sdevice'] == 'HiFiBerry DAC+ ADC' || $_SESSION['i2sdevice'] == 'HiFiBerry DAC+ ADC Pro') {
 			sysCmd('alsaloop > /dev/null 2>&1 &');
 		}
 		elseif ($_SESSION['i2sdevice'] == 'Audiophonics ES9028/9038 DAC' || $_SESSION['i2sdevice'] == 'Audiophonics ES9028/9038 DAC (Pre 2019)') {

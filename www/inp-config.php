@@ -47,7 +47,7 @@ session_write_close();
 
 // Input source
 $_select['audioin'] .= "<option value=\"Local\" " . (($_SESSION['audioin'] == 'Local') ? "selected" : "") . ">Local (MPD)</option>\n";
-if ($_SESSION['i2sdevice'] == 'HiFiBerry DAC+ ADC') {
+if ($_SESSION['i2sdevice'] == 'HiFiBerry DAC+ ADC' || $_SESSION['i2sdevice'] == 'HiFiBerry DAC+ ADC Pro') {
 	$_select['audioin'] .= "<option value=\"Analog\" " . (($_SESSION['audioin'] == 'Analog') ? "selected" : "") . ">Analog input</option>\n";
 }
 elseif ($_SESSION['i2sdevice'] == 'Audiophonics ES9028/9038 DAC' || $_SESSION['i2sdevice'] == 'Audiophonics ES9028/9038 DAC (Pre 2019)') {

@@ -496,7 +496,7 @@ if ($_SESSION['feat_bitmask'] & FEAT_INPSOURCE) {
 		($_SESSION['i2sdevice'] != 'None' ? $_SESSION['i2sdevice'] : $_SESSION['i2soverlay']);
 	workerLog('worker: Source select (output: ' . $audio_output . ')');
 
-	if ($_SESSION['i2sdevice'] == 'HiFiBerry DAC+ ADC' || strpos($_SESSION['i2sdevice'], 'Audiophonics ES9028/9038 DAC') !== -1) {
+	if ($_SESSION['i2sdevice'] == 'HiFiBerry DAC+ ADC' || $_SESSION['i2sdevice'] == 'HiFiBerry DAC+ ADC Pro' || strpos($_SESSION['i2sdevice'], 'Audiophonics ES9028/9038 DAC') !== -1) {
 		setAudioIn($_SESSION['audioin']);
 	}
 }
@@ -889,7 +889,7 @@ while (true) {
 	if ($_SESSION['rbsvc'] == '1') {
 		chkRbActive();
 	}
-	if ($_SESSION['i2sdevice'] == 'HiFiBerry DAC+ ADC' || strpos($_SESSION['i2sdevice'], 'Audiophonics ES9028/9038 DAC') !== -1) {
+	if ($_SESSION['i2sdevice'] == 'HiFiBerry DAC+ ADC' || $_SESSION['i2sdevice'] == 'HiFiBerry DAC+ ADC Pro' || strpos($_SESSION['i2sdevice'], 'Audiophonics ES9028/9038 DAC') !== -1) {
 		chkInpActive();
 	}
 	if ($_SESSION['i2sdevice'] == 'Allo Boss 2 DAC') {
